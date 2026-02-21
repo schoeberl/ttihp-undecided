@@ -21,7 +21,7 @@ class ChiselTop() extends Module {
   add := io.ui_in + io.uio_in
 
   // Blink with 1 Hz
-  val cntReg = RegInit(0.U(32.W))
+  val cntReg = Reg(UInt(25.W))
   val ledReg = RegInit(0.U(1.W))
   cntReg := cntReg + 1.U
   when (cntReg === 25000000.U) {
